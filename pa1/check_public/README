@@ -1,0 +1,53 @@
+Buzera Tiberiu 323CA
+
+Tema1 PA - Gigel si muntele de bani
+
+Problema 1 : Crypto
+Am rezolvat problema folosind metoda Greedy, am parcurs vectorul de calculatoare
+dupa fiecare schimbare, am retinut rezultatul de pana atunci intr-o suma
+partiala pe care am marit-o la fiecare pas si pe care o adaugam la suma totala.
+Am folosit si o variabila index pentru a retine calculatoarele pe care deja
+le-am upgradat macar odata. Si o variabila min pentru a retine care a devenit
+numarul minim de monede produse pe ora de un calculator.
+Complexitatea temporala a problemei este O(n * log n).
+Complexitatea spatiala a problemei este  O(n ^ 2).
+
+Problema 2 : Stocks
+Am rezolvat problema folosind Programare Dinamica si anume un algoritm
+asemanator cu Rucsac din laboratorul 3 de pe OCW
+(https://ocw.cs.pub.ro/courses/pa/laboratoare/laborator-03#categoria_2rucsac).
+Am presupus ca algoritmul cerut era asemanator deoarece se spune in enunt ca
+nu se pot cumpara doar parti din actiuni. Diferenta fata de algoritmul din
+laborator este ca eu am avut nevoie de o matrice in 3 dimensiuni pentru
+a tine cont atat de bugetul limitat cat si de pierderea maxima.
+Apoi am parcurs matricea retinand toate cumparaturile posibile la fiecare pas
+calculate cu sumele maxime de pana atunci.
+Complexitatea temporala a problemei este O(n ^ 3).
+Complexitate spatiala a problemei este O(n ^3)din cauza matricei in 3 dimensiuni.
+
+Problema 3 : Valley
+Am rezolvat problema tot folosind Programare Dinamica, am calculat printr-o
+singura parcurgere atat costul necesar crearii unui munte crescator si
+descrescator si apoi calcularea rezultatului cerut cu formula:
+stanga[index - 1] + dreapta[index + 1] +
+max_long(stanga[index] - stanga[index - 1], dreapta[index] - dreapta[index + 1])
+A fost nevoie sa luam si cazurile particulare daca minumul din vector se gaseste
+la marginea muntelui.
+Complexitatea temporala a problemei este O(n).
+Complexitatea spatiala a problemei este O(n), desi avem in folosinta mai multi
+vectori acestia nu schimba atat de tare complexitatea.
+
+Problema 4 : Ridge
+Am rezolvat problema folosind Programare Dinamica, utilizand un algoritm gasit
+pe site-ul:
+https://www.geeksforgeeks.org/minimize-the-cost-to-make-all-the-adjacent-
+elements-distinct-in-an-array/
+Am adaptat acest algoritm astfel incat sa nu mai creasca inaltimile, in schimb
+sa le scada atata timp cat nu ajunge mai mica inaltimea decat 0.
+Algoritmul calculeaza la fiecare pas daca este nevoie sa escaveze un nivel
+doua sau niciunul. La final alegem de pe ultima linie a matricei minimul.
+Complexitatea temporala a problemei este O(n^2).
+Complexitatea spatiala a problemei este O(n ^ 2) din cauza matricei dp.
+
+
+

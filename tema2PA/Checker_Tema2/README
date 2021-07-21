@@ -1,0 +1,46 @@
+Autor : Buzera Tiberiu 323CA
+
+Tema 2 : Programarea Algoritmilor
+
+Problema 1: Poduri
+
+Pentru aceasta problema am folosit algoritmul lui Lee.
+Am retinut datele de intrare intr-o matrice si n-am folosit de o coada pentru a
+lua toate pozitiile din matrice si a le procesa, pana la finalul programului
+fiecare pozitie care contine un pod si unde se poate ajunge a fost vizitata
+si s-a calculat un cost pentru a ajunge pe oricare din acele pozitii.
+La final se face o parcurgere a marginilor si se verifica unde se gaseste
+costul minim. Daca nu exista atunci inseamna ca nu se poate iesi din labirint
+si se afisaza -1.
+
+Comlexitatea algoritmului lui Lee pentru o matrice de n pe m este aceeasi si
+spatiala si temporala: O(n*m).
+
+
+Problema 2: Adrese
+
+Pentru aceasta problema am folosit un vector de persoane pentru a retine numele
+si mail-urile fiecarei persoane, un unordered_map pentru a retine daca un mail
+a fost deja folsit si se gaseste in vector, caz in care il adaugam in vectorul
+de liste care joaca rol de matrice de adiacenta: daca mail-ul citit se gaseste
+deja in vector atunci indexul ultimei persoane citite se adauga la lista de
+adiacenta a persoanei care il continea deja.
+La final se face o parcurgere DFS si se creaza un set cu noile valori si noii
+useri.
+
+Complexitatea temporala pentru aceasta problema este O(n^2), unde n este numarul
+de persoane din vector.
+
+Problema 3: Lego
+
+Pentru aceasta problema am folosit backtracking pentru a gasi toate combinatiile
+posibile cu primele k numere, dupa care am folosit un vector care sa contina
+numerele rezultate din cambinari repetate fiecare de t ori, pentru a putea dupa
+genera tot cu backtracking toate submultimile posibile cu acele numere si a le
+calcula sumele. Sumele sunt adaugate intr-ul set deja sortat care nu contine
+repetari si in care verificam cea mai lunga secventa consecutiva.
+La final se afisaza numarul de elemente a celei mai lungi secvente si elementele
+din conbinatia din care a rezultat.
+
+Complexitatea temporala pentru acest algoritm este O(2^n * 2^t) unde n este
+numarul de elemente initiale si t numarul de repetari ale fiecarui numar.
